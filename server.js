@@ -5,8 +5,7 @@ const bodyparser = require("body-parser");
 const path = require('path');
 
 const connectDB = require('./server/database/connection');
-const session = require("express-session");
-// const { v4: uuidv4 } = require("uuid");
+const session = require('cookie-session');// const { v4: uuidv4 } = require("uuid");
 const app = express();
 
 dotenv.config( { path : 'config.env'} )
