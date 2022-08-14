@@ -2,18 +2,15 @@ const express = require('express');
 const dotenv = require('dotenv');
 const morgan = require('morgan');
 const bodyparser = require("body-parser");
-var session = require('cookie-session');
-
 const path = require('path');
 
 const connectDB = require('./server/database/connection');
-
-const { v4: uuidv4 } = require("uuid");
+const session = require("express-session");
+// const { v4: uuidv4 } = require("uuid");
 const app = express();
 
 dotenv.config( { path : 'config.env'} )
 const PORT = process.env.PORT || 3000;
-const HOST = '0.0.0.0'
 
 // log requests
 app.use(morgan('tiny'));
@@ -47,5 +44,5 @@ app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
 
 // load routers
 app.use('/', require('./server/routes/router'))
-
-app.listen(PORT, HOST, ()=> { console.log(`Server is running on http://localhost:${PORT}`)});
+const host = '0.0.0.0'
+app.listen(PORT, host, ()=> { console.log(`Server is running on http://localhost:${PORT}`)});
