@@ -10,7 +10,7 @@ const session = require("express-session");
 const app = express();
 
 dotenv.config( { path : 'config.env'} )
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 // log requests
 app.use(morgan('tiny'));
