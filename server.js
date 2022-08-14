@@ -10,7 +10,7 @@ const { v4: uuidv4 } = require("uuid");
 const app = express();
 
 dotenv.config( { path : 'config.env'} )
-const PORT = process.env.PORT
+const PORT = 3000;
 
 // log requests
 app.use(morgan('tiny'));
